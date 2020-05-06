@@ -67,10 +67,16 @@ header h1 {
 header #buttons {
 	position: absolute;
 	right: 20px;
+	bottom: 15px;
 }
 
 #buttons a {
-	padding: 15px;
+	padding: 10px;
+	border: 1px solid #fff;
+}
+
+#buttons a:hover {
+	background-color: #1C2C3E;
 }
 
 a {
