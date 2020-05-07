@@ -96,6 +96,7 @@ a:hover {
 }
 
 nav {
+	width:100%;
 	padding: 15px;
 	background-color: #29415D;
 }
@@ -116,6 +117,35 @@ nav ul li {
 nav ul li a {
 	padding: 15px;
 	text-decoration: none;
+}
+
+@media all and (max-width: 500px) {
+
+	nav ul {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		justify-content: center;
+		list-style: none;
+		
+	}
+	nav li {
+		text-align: center;
+		width: 100%;
+		padding: 15px;
+	}
+
+	nav li a {
+		text-align: center;
+		width:100%;
+		text-decoration: none;
+	}
+
+	nav li a:hover {
+		width: 100%;
+		background-color: #1C2C3E;
+		padding: 15px;
+	}
 }
 
 footer {
