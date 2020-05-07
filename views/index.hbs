@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <title>DaWebCine</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<link rel="stylesheet" href="css/stylesheet.css">
+<link rel="stylesheet" href="stylesheets/stylesheet.css">
 </head>
 <body id="page-container">
 	<header>
 		<h1>DaWebCine</h1>
 		<!-- <img src="logo-cine.png" alt="*Logo Cine*" height="100" width="100"/> -->
 		<div id="buttons">
-			<a id="linkLogin" href="#login">Inciar sesiÃ³n</a> 
+			<a id="linkLogin" href="#login">Inciar sesion</a> 
 			<a id="linkRegistro" href="#registro">Registrarse</a>
 		</div>
 	</header>
@@ -24,20 +24,23 @@
 	</nav>
 	<div id="Cines">
 		<div id="content-wrap">
-			<div class="card mb-3" style="max-width: 100%;">
-			  <div class="row no-gutters">
-			    <div class="col-md-4">
-			      <img src="cine1.png" class="card-img" alt="...">
-			    </div>
-			    <div class="col-md-8">
-			      <div class="card-body">
-			        <h5 class="card-title">Cine 1</h5>
-			        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-			        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-			      </div>
-			    </div>
-			  </div>
-			</div>
+			{{#each cines}}
+				<div class="card mb-3" style="max-width: 100%;">
+				  <div class="row no-gutters">
+				    <div class="col-md-4">
+				      <img src="{{imagen}}" class="card-img" alt="...">
+				    </div>
+				    <div class="col-md-8">
+				      <div class="card-body">
+				        <h5 class="card-title">{{nombre}}</h5>
+				        <p class="card-text">Ubicacion: {{ubicacion}}</p>
+				        <p class="card-text">Aforo maximo: {{aforo}}</p>
+				        <p class="card-text">Numero de salas: {{numSalas}}</p>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+			{{/each}}
 		</div>
 	</div>
 	<footer>
