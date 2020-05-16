@@ -32,16 +32,13 @@ h1 {
 
 h2 {
 	font-size: 1.5em;
+	margin-bottom: 0;
+	padding: 15px 10px 10px 10px;
+	text-align: center;
 }
 
 h3 {
 	font-size: 1.3em;
-}
-
-section h2 {
-	font-family: sans-serif;
-	text-align: center;
-	color: #A4AA04;
 }
 
 p strong {
@@ -76,21 +73,22 @@ header img {
 }
 
 #buttons a {
-	padding: 10px;
 	border: 1px solid #fff;
+	color:#fff;
+	padding: 10px;
 }
 
 #buttons a:hover {
 	background-color: #1C2C3E;
 }
 
-a {
+.link a {
 	color: #fff;
 	font-weight: 900;
 	text-decoration: none;
 }
 
-a:hover {
+link a:hover {
 	color: #fff;
 	text-decoration: underline;
 }
@@ -120,6 +118,10 @@ nav ul li a {
 }
 
 @media all and (max-width: 500px) {
+
+	ul {
+		padding-left: 0;
+	}
 
 	nav ul {
 		display: flex;
@@ -151,13 +153,13 @@ nav ul li a {
 footer {
 	bottom: 0;
 	background-color: #29415D;
-	height: 3rem;
+/* 	height: 3rem; */
 	position: absolute;
 	width: 100%;
 }
 
 footer a {
-	padding: 5px;
+	padding: 15px;
 }
 
 footer a:hover {

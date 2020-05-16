@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 		]
 	}
 
-	res.render('index', datos);
+	res.render('cartelera1', datos);
 });
 
 module.exports = router;
