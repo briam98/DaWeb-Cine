@@ -19,7 +19,7 @@ body {
 }
 
 #content-wrap {
-	padding-bottom: 3rem; /* Footer height */
+	padding-bottom: 4rem; /* Footer height */
 }
 
 h1, h2, h3 {
@@ -117,7 +117,7 @@ nav ul li a {
 	text-decoration: none;
 }
 
-@media all and (max-width: 500px) {
+@media all and (max-width: 480px) {
 
 	ul {
 		padding-left: 0;
@@ -168,4 +168,17 @@ footer a:hover {
 
 footer div {
 	padding: 15px;
+}
+
+.no_margin {
+	margin: 0;
+}
+
+.border_right {
+	border-radius: 20px;
+}
+
+.border_left {
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
 }
