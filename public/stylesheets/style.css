@@ -193,3 +193,7 @@ footer div {
 	border-bottom-right-radius: 20px;
 	border-top-right-radius: 20px;
 }
+
+#linkCerrarSesion {
+	display: none;
+}

@@ -12,11 +12,14 @@
 
 <body id="page-container">
     <header>
-        <a href="/"><h1>DaWebCine</h1></a>
+        <a href="/">
+            <h1>DaWebCine</h1>
+        </a>
         <!-- <img src="logo-cine.png" alt="*Logo Cine*" height="100" width="100"/> -->
         <div id="buttons">
             <a id="linkLogin" href="./login">Iniciar sesion</a>
             <a id="linkRegistro" href="./registro">Registrarse</a>
+            <a id="linkCerrarSesion" href="/" onclick="cerrarSesion()">Cerrar sesión</a>
         </div>
     </header>
     <nav class="link">
@@ -78,7 +81,8 @@
                                 <div class="col-md-10">
                                     <div class=" row card-body">
                                         <div class="col-md-4">
-                                            <h5 class="card-title" style="font-size: medium;"><b>Érase una vez... en Hollywood</b></h5>
+                                            <h5 class="card-title" style="font-size: medium;"><b>Érase una vez... en
+                                                    Hollywood</b></h5>
                                             <p class="card-text">Lunes: 19:00 20:00 22:00</p>
                                             <p class="card-text">Martes: 19:00 20:00 22:00</p>
                                             <p class="card-text">Miercoles: 19:00 20:00 22:00</p>
@@ -119,6 +123,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+    <script text="text/javascript" src="js/login_functions.js"></script>
 </body>
 
 </html>

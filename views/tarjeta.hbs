@@ -15,8 +15,7 @@
         <a href="/"><h1>DaWebCine</h1></a>
         <!-- <img src="logo-cine.png" alt="*Logo Cine*" height="100" width="100"/> -->
         <div id="buttons">
-            <a id="linkLogin" href="./login">Iniciar sesion</a>
-            <a id="linkRegistro" href="./registro">Registrarse</a>
+            <a id="linkCerrarSesion" href="/" onclick="cerrarSesion()">Cerrar sesión</a>
         </div>
     </header>
     <nav class="link">
@@ -43,10 +42,10 @@
                                         <div class="col-md-8">
                                             <div class="card-body">
                                                 <h5 class="card-title"> <b>PERFIL</b></h5>
-                                                <p class="card-text"><b>Nombre:</b> Briam Daniel</p>
-                                                <p class="card-text"><b>Apellidos:</b> Solano Godoy</p>
-                                                <p class="card-text"><b>E-mail:</b> briamsg@gmail.com</p>
-                                                <p class="card-text"><b>Id:</b> 100</p>
+                                                <p class="card-text"><b>Nombre:</b> {{nombre}}</p>
+                                                <p class="card-text"><b>Apellidos:</b> {{apellidos}}</p>
+                                                <p class="card-text"><b>Correo:</b> {{correo}}</p>
+                                                <p class="card-text"><b>Id:</b> {{id}}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -57,7 +56,7 @@
                                         <div class="card border-primary mb-3">
                                             <div class="card-header" style="text-align: center;">PUNTOS</div>
                                             <div class="card-body text-primary" style="text-align: center;">
-                                                <p class="card-text" style="font-size: xx-large; font-family: fantasy;">100</p>
+                                                <p class="card-text" style="font-size: xx-large; font-family: fantasy;">{{puntos}}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -114,6 +113,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+
+        <script text="text/javascript" src="js/viewController.js"></script>
 </body>
 
 </html>
