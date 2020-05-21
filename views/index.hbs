@@ -1,230 +1,208 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<link rel="stylesheet" href="stylesheets/style.css">
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-	<title>DaWebCine</title>
-</head>
-
-<body id="page-container">
-	<header>
-        <a href="/"><h1>DaWebCine</h1></a>
-		<!-- <img src="logo-cine.png" alt="*Logo Cine*" height="100" width="100"/> -->
-		<div id="buttons">
-			<a id="linkLogin" href="./login">Iniciar sesion</a>
-			<a id="linkRegistro" href="./registro">Registrarse</a>
-			<a id="linkCerrarSesion" href="/" onclick="cerrarSesion()">Cerrar sesión</a>
-		</div>
-	</header>
-	<nav class="link">
-		<ul>
-			<li><a href="#cines">Cines</a></li>
-			<li><a href="#peliculas">Peliculas</a></li>
-			<li><a href="./tarjeta">Tarjeta de fidelidad</a></li>
-		</ul>
-	</nav>
-	<div id="content-wrap">
-		<div id="contenido_cines">
-			<h2 id="cines">CINES</h2>
-			{{#each cines}}
-			<div class="row no-gutters justify-content-center">
-				<div class="card mb-3 col-md-11 border_right">
-					<div class="row">
-						<div class="col-md-4">
-							<div id="{{id}}" class="carousel slide" data-ride="carousel">
-								<ol class="carousel-indicators">
-									<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">
-									</li>
-									<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-									<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-								</ol>
-								<div class="carousel-inner border_left">
-									<div class="carousel-item active">
-										<img src="{{imagen1}}" class="d-block w-100" alt="Imagen 1 del cine">
-									</div>
-									<div class="carousel-item">
-										<img src="{{imagen2}}" class="d-block w-100" alt="Imagen 2 del cine">
-									</div>
-									<div class="carousel-item">
-										<img src="{{imagen3}}" class="d-block w-100" alt="Imagen 3 del cine">
-									</div>
+<header>
+	<a href="/">
+		<h1>DaWebCine</h1>
+	</a>
+	<!-- <img src="logo-cine.png" alt="*Logo Cine*" height="100" width="100"/> -->
+	<div id="buttons">
+		<a id="linkLogin" href="./login">Iniciar sesion</a>
+		<a id="linkRegistro" href="./registro">Registrarse</a>
+		<a id="linkCerrarSesion" href="/" onclick="cerrarSesion()">Cerrar sesión</a>
+	</div>
+</header>
+<nav class="link">
+	<ul>
+		<li><a href="#cines">Cines</a></li>
+		<li><a href="#peliculas">Peliculas</a></li>
+		<li><a href="./tarjeta">Tarjeta de fidelidad</a></li>
+	</ul>
+</nav>
+<div id="content-wrap">
+	<div id="contenido_cines">
+		<h2 id="cines">CINES</h2>
+		{{#each cines}}
+		<div class="row no-gutters justify-content-center">
+			<div class="card mb-3 col-md-11 border_right">
+				<div class="row">
+					<div class="col-md-4">
+						<div id="{{id}}" class="carousel slide" data-ride="carousel">
+							<ol class="carousel-indicators">
+								<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">
+								</li>
+								<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+								<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+							</ol>
+							<div class="carousel-inner border_left">
+								<div class="carousel-item active">
+									<img src="{{imagen1}}" class="d-block w-100" alt="Imagen 1 del cine">
 								</div>
-								<a class="carousel-control-prev" href="#{{id}}" role="button" data-slide="prev">
-									<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-									<span class="sr-only">Previous</span>
-								</a>
-								<a class="carousel-control-next" href="#{{id}}" role="button" data-slide="next">
-									<span class="carousel-control-next-icon" aria-hidden="true"></span>
-									<span class="sr-only">Next</span>
-								</a>
+								<div class="carousel-item">
+									<img src="{{imagen2}}" class="d-block w-100" alt="Imagen 2 del cine">
+								</div>
+								<div class="carousel-item">
+									<img src="{{imagen3}}" class="d-block w-100" alt="Imagen 3 del cine">
+								</div>
 							</div>
+							<a class="carousel-control-prev" href="#{{id}}" role="button" data-slide="prev">
+								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+								<span class="sr-only">Previous</span>
+							</a>
+							<a class="carousel-control-next" href="#{{id}}" role="button" data-slide="next">
+								<span class="carousel-control-next-icon" aria-hidden="true"></span>
+								<span class="sr-only">Next</span>
+							</a>
 						</div>
-						<div class="col-md-8">
-							<div class="card-body">
-								<h5 class="card-title"><b>{{nombre}}</b></h5>
-								<p class="card-text"><b>Ubicación:</b> {{ubicacion}}</p>
-								<p class="card-text"><b>Aforo máximo:</b> {{aforo}}</p>
-								<p class="card-text"><b>Número de salas:</b> {{numSalas}}</p>
+					</div>
+					<div class="col-md-8">
+						<div class="card-body">
+							<h5 class="card-title"><b>{{nombre}}</b></h5>
+							<p class="card-text"><b>Ubicación:</b> {{ubicacion}}</p>
+							<p class="card-text"><b>Aforo máximo:</b> {{aforo}}</p>
+							<p class="card-text"><b>Número de salas:</b> {{numSalas}}</p>
 
-								<a href="{{cartelera}}" class="btn btn-primary">Cartelera</a>
-							</div>
+							<a href="{{cartelera}}" class="btn btn-primary">Cartelera</a>
 						</div>
 					</div>
 				</div>
 			</div>
-			{{/each}}
+		</div>
+		{{/each}}
 
 
-			<div id="contenido_peliculas">
-				<h2 id="peliculas">PELICULAS</h2>
-				<div class="fluid-container">
-					<div class="row no-gutters justify-content-center" style="margin: 0;">
-						<div class="col-md-11">
-							<div class="row">
-								<div class="col-md-3">
-									<div class="card">
-										<img src="images/parasitos.png" class="card-img-top img-fluid"
-											alt="Imagen pelicula">
-										<div class="card-body">
-											<h5 class="card-title"><b>Parásitos</b></h5>
-											<p class="card-text">Toda la familia de Ki-taek está en el paro y se
-												interesa
-												mucho por el tren de vida de la riquísima familia Park. Un día, su
-												hijo
-												logra que le recomienden para dar clases particulares de inglés en
-												casa de
-												los Park. Es el comienzo de un engranaje incontrolable, del cual
-												nadie
-												saldrá realmente indemne.</p>
-										</div>
-										<ul class="list-group list-group-flush">
-											<li class="list-group-item"> <b>Director:</b> Bong Joon-ho</li>
-											<li class="list-group-item"> <b>Reparto:</b>
-												Song Kang-ho, Lee Seon-gyun, Jang Hye-jin, Cho Yeo-jeong</li>
-											<li class="list-group-item"><b>Duracion:</b> 132 mins.</li>
-										</ul>
-										<div class="card-body">
-											<a href="https://www.youtube.com/watch?v=Z7SiFLgoFQM"
-												class="card-link">Trailer</a>
-										</div>
+		<div id="contenido_peliculas">
+			<h2 id="peliculas">PELICULAS</h2>
+			<div class="fluid-container">
+				<div class="row no-gutters justify-content-center" style="margin: 0;">
+					<div class="col-md-11">
+						<div class="row">
+							<div class="col-md-3">
+								<div class="card">
+									<img src="images/parasitos.png" class="card-img-top img-fluid"
+										alt="Imagen pelicula">
+									<div class="card-body">
+										<h5 class="card-title"><b>Parásitos</b></h5>
+										<p class="card-text">Toda la familia de Ki-taek está en el paro y se
+											interesa
+											mucho por el tren de vida de la riquísima familia Park. Un día, su
+											hijo
+											logra que le recomienden para dar clases particulares de inglés en
+											casa de
+											los Park. Es el comienzo de un engranaje incontrolable, del cual
+											nadie
+											saldrá realmente indemne.</p>
+									</div>
+									<ul class="list-group list-group-flush">
+										<li class="list-group-item"> <b>Director:</b> Bong Joon-ho</li>
+										<li class="list-group-item"> <b>Reparto:</b>
+											Song Kang-ho, Lee Seon-gyun, Jang Hye-jin, Cho Yeo-jeong</li>
+										<li class="list-group-item"><b>Duracion:</b> 132 mins.</li>
+									</ul>
+									<div class="card-body">
+										<a href="https://www.youtube.com/watch?v=Z7SiFLgoFQM"
+											class="card-link">Trailer</a>
 									</div>
 								</div>
-
-								<div class="col-md-3">
-									<div class="card">
-										<img src="images/erase_una_vez_en_hollywood.png" class="card-img-top img-fluid"
-											alt="Imagen pelicula">
-										<div class="card-body">
-											<h5 class="card-title"><b>Érase una vez... en Hollywood</b></h5>
-											<p class="card-text">En la ciudad de Los Ángeles, en 1969, todo está
-												cambiando,
-												y la estrella de la televisión Rick Dalton y Cliff Booth, su doble
-												de muchos
-												años, se abren camino en una industria que ya prácticamente no
-												reconocen.
-											</p>
-										</div>
-										<ul class="list-group list-group-flush">
-											<li class="list-group-item"> <b>Director:</b> Quentin Tarantino</li>
-											<li class="list-group-item"> <b>Reparto:</b>
-												Leonardo DiCaprio, Brad Pitt, Margot Robbie, Emile Hirsch, Margaret
-												Qualley,
-												Al Pacino</li>
-											<li class="list-group-item"><b>Duracion:</b> 165 mins.</li>
-										</ul>
-										<div class="card-body">
-											<a href="https://www.youtube.com/watch?v=J0rFGJV3cYw" class="card-link"
-												target="_blank">Trailer</a>
-										</div>
-									</div>
-								</div>
-
-								<div class="col-md-3">
-									<div class="card">
-										<img src="images/1917.png" class="card-img-top img-fluid" alt="Imagen pelicula">
-										<div class="card-body">
-											<h5 class="card-title"><b>1917</b></h5>
-											<p class="card-text">En lo más crudo de la Primera Guerra Mundial, dos
-												jóvenes
-												soldados británicos reciben una misión aparentemente imposible. En
-												una
-												carrera contrarreloj, deben atravesar el territorio enemigo para
-												entregar un
-												mensaje que evitará un mortífero ataque contra cientos de soldados,
-												entre
-												ellos el propio hermano de Blake.</p>
-										</div>
-										<ul class="list-group list-group-flush">
-											<li class="list-group-item"> <b>Director:</b> Sam Mendes</li>
-											<li class="list-group-item"> <b>Reparto:</b>
-												George MacKay, Dean-Charles Chapman, Mark Strong, Richard Madden,
-												Benedict
-												Cumberbatch</li>
-											<li class="list-group-item"><b>Duracion:</b> 119 mins.</li>
-										</ul>
-										<div class="card-body">
-											<a href="https://www.youtube.com/watch?v=M6euo4jMaUw" class="card-link"
-												target="_blank">Trailer</a>
-										</div>
-									</div>
-								</div>
-
-								<div class="col-md-3">
-									<div class="card">
-										<img src="images/joker.png" class="card-img-top img-fluid" alt="Imagen pelicula"
-											witdh="10">
-										<div class="card-body">
-											<h5 class="card-title"><b>Joker</b></h5>
-											<p class="card-text">Arthur Fleck es un hombre que se enfrenta a la crueldad
-												y al desprecio de la sociedad. Vive ignorado por un sistema que le
-												permite pasar de la vulnerabilidad a la inmoralidad. Es un payaso que de
-												día trabaja por horas y de noche intenta convertirse en monologuista,
-												pero lo cierto es que siempre acaban burlándose de él. Está atrapado en
-												una existencia que se tambalea ante el precipicio de la realidad y la
-												locura, y una mala decisión va a desencadenar una serie de trágicos
-												acontecimientos.</p>
-										</div>
-										<ul class="list-group list-group-flush">
-											<li class="list-group-item"> <b>Director:</b> Todd Phillips</li>
-											<li class="list-group-item"> <b>Reparto:</b>
-												Joaquin Phoenix, Robert De Niro, Zazie Beetz, Frances Conroy, Brett
-												Cullen,
-												Bill Camp, Shea Whigham</li>
-											<li class="list-group-item"><b>Duracion:</b> 121 mins.</li>
-										</ul>
-										<div class="card-body">
-											<a href="https://www.youtube.com/watch?v=ygUHhImN98w" class="card-link"
-												target="_blank">Trailer</a>
-										</div>
-									</div>
-								</div>
-
 							</div>
+
+							<div class="col-md-3">
+								<div class="card">
+									<img src="images/erase_una_vez_en_hollywood.png" class="card-img-top img-fluid"
+										alt="Imagen pelicula">
+									<div class="card-body">
+										<h5 class="card-title"><b>Érase una vez... en Hollywood</b></h5>
+										<p class="card-text">En la ciudad de Los Ángeles, en 1969, todo está
+											cambiando,
+											y la estrella de la televisión Rick Dalton y Cliff Booth, su doble
+											de muchos
+											años, se abren camino en una industria que ya prácticamente no
+											reconocen.
+										</p>
+									</div>
+									<ul class="list-group list-group-flush">
+										<li class="list-group-item"> <b>Director:</b> Quentin Tarantino</li>
+										<li class="list-group-item"> <b>Reparto:</b>
+											Leonardo DiCaprio, Brad Pitt, Margot Robbie, Emile Hirsch, Margaret
+											Qualley,
+											Al Pacino</li>
+										<li class="list-group-item"><b>Duracion:</b> 165 mins.</li>
+									</ul>
+									<div class="card-body">
+										<a href="https://www.youtube.com/watch?v=J0rFGJV3cYw" class="card-link"
+											target="_blank">Trailer</a>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-3">
+								<div class="card">
+									<img src="images/1917.png" class="card-img-top img-fluid" alt="Imagen pelicula">
+									<div class="card-body">
+										<h5 class="card-title"><b>1917</b></h5>
+										<p class="card-text">En lo más crudo de la Primera Guerra Mundial, dos
+											jóvenes
+											soldados británicos reciben una misión aparentemente imposible. En
+											una
+											carrera contrarreloj, deben atravesar el territorio enemigo para
+											entregar un
+											mensaje que evitará un mortífero ataque contra cientos de soldados,
+											entre
+											ellos el propio hermano de Blake.</p>
+									</div>
+									<ul class="list-group list-group-flush">
+										<li class="list-group-item"> <b>Director:</b> Sam Mendes</li>
+										<li class="list-group-item"> <b>Reparto:</b>
+											George MacKay, Dean-Charles Chapman, Mark Strong, Richard Madden,
+											Benedict
+											Cumberbatch</li>
+										<li class="list-group-item"><b>Duracion:</b> 119 mins.</li>
+									</ul>
+									<div class="card-body">
+										<a href="https://www.youtube.com/watch?v=M6euo4jMaUw" class="card-link"
+											target="_blank">Trailer</a>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-3">
+								<div class="card">
+									<img src="images/joker.png" class="card-img-top img-fluid" alt="Imagen pelicula"
+										witdh="10">
+									<div class="card-body">
+										<h5 class="card-title"><b>Joker</b></h5>
+										<p class="card-text">Arthur Fleck es un hombre que se enfrenta a la crueldad
+											y al desprecio de la sociedad. Vive ignorado por un sistema que le
+											permite pasar de la vulnerabilidad a la inmoralidad. Es un payaso que de
+											día trabaja por horas y de noche intenta convertirse en monologuista,
+											pero lo cierto es que siempre acaban burlándose de él. Está atrapado en
+											una existencia que se tambalea ante el precipicio de la realidad y la
+											locura, y una mala decisión va a desencadenar una serie de trágicos
+											acontecimientos.</p>
+									</div>
+									<ul class="list-group list-group-flush">
+										<li class="list-group-item"> <b>Director:</b> Todd Phillips</li>
+										<li class="list-group-item"> <b>Reparto:</b>
+											Joaquin Phoenix, Robert De Niro, Zazie Beetz, Frances Conroy, Brett
+											Cullen,
+											Bill Camp, Shea Whigham</li>
+										<li class="list-group-item"><b>Duracion:</b> 121 mins.</li>
+									</ul>
+									<div class="card-body">
+										<a href="https://www.youtube.com/watch?v=ygUHhImN98w" class="card-link"
+											target="_blank">Trailer</a>
+									</div>
+								</div>
+							</div>
+
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<footer class="link">
-		<div>
-			<a href="#">Copyright</a>
-			<a href="#">Mapa del sitio</a>
-		</div>
-	</footer>
-	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-		crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-		crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-		crossorigin="anonymous"></script>
-	<script text="text/javascript" src="js/viewController.js"></script>
-</body>
-</html>
+</div>
+
+<footer class="link">
+	<div>
+		<a href="#">Copyright</a>
+		<a href="#">Mapa del sitio</a>
+	</div>
+</footer>

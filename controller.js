@@ -12,11 +12,9 @@ class controller {
       "' AND pass = '" +
       pass +
       "'";
-    console.log(userQuery);
 
     bd_conection.query(userQuery, function (error, resultado) {
       if (error) {
-        console.log("Error: " + error);
         respuesta.writeHead(500);
         respuesta.end();
       } else {
@@ -26,11 +24,9 @@ class controller {
           respuesta.cookie("id", userId);
           respuesta.writeHead(200);
           respuesta.end();
-          console.log("Resultado: " + resultado[0].id);
         } else {
           respuesta.writeHead(401);
           respuesta.end();
-          console.log("Resultado vacio");
         }
       }
     });
@@ -42,20 +38,41 @@ class controller {
 
       bd_conection.query(userQuery, function (error, resultado) {
         if (error) {
-          console.log("Error: " + error);
           reject("Error");
         } else {
           if (resultado != "") {
-            console.log('Resolve: ');
             resolve(resultado[0]);
           } else {
-            console.log('Reject: ');
             reject(undefined);
           }
         }
       });
     });
   }
+
+  register(req, res) {
+    return new Promise(function (resolve, reject) {
+    var nombre = req.body.nombre;
+    var apellidos = req.body.apellidos;
+    var correo = req.body.correo;
+    var pass = req.body.pass1;
+
+    var userQuery = "INSERT INTO `cine`.`usuario` (`nombre`, `apellidos`, `correo`, `pass`) VALUES (" + nombre + ", " + apellidos + ", " + correo + ", " + pass + ");";
+
+      bd_conection.query(userQuery, function (error, resultado) {
+        if (error) {
+          reject("Error");
+        } else {
+          if (resultado != "") {
+            resolve(resultado[0]);
+          } else {
+            reject(undefined);
+          }
+        }
+      });
+    });
+  }
+
 }
 
 var controlador = new controller();

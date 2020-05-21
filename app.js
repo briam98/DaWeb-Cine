@@ -13,6 +13,7 @@ var cartelera3Router = require('./routes/cartelera3');
 var tarjetaRouter = require('./routes/tarjeta');
 var loginRouter = require('./routes/login');
 var registroRouter = require('./routes/registro');
+var path = require('path');
 
 var app = express();
 
@@ -36,6 +37,9 @@ app.use('/login', loginRouter);
 app.use('/registro', registroRouter);
 app.use('/validarLogin', function(req, res, next) {
   controller.validarLogin(req,res);
+});
+app.use('/register', function(req, res, next) {
+  controller.register(req,res);
 });
 
 // catch 404 and forward to error handler
