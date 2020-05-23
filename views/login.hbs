@@ -1,17 +1,40 @@
-<form class="form-signin">
-  <a href="/">
-    <h1>DaWebCine</h1>
-  </a>
-  <label for="inputEmail" class="sr-only">Correo Electrónico</label>
-  <input type="email" id="correo" class="form-control" placeholder="Correo Electrónico" required autofocus>
-  <br>
-  <label for="inputPassword" class="sr-only">Contraseña</label>
-  <input type="password" id="pass" class="form-control" placeholder="Contraseña" required>
-  <div class="checkbox mb-3">
-    <label>
-      <a href="./registro">Regístrate aquí</a>
-    </label>
-  </div>
-  <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="login()">Iniciar Sesión</button>
-</form>
+<div class="container">
+  <form class="form-signin">
+    <div class="row justify-content-center pt-5">
+      <a href="/">
+        <h1>DaWebCine</h1>
+      </a>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-sm-6 col-md-5 col-lg-4">
+        <label for="inputEmail" class="sr-only">Correo Electrónico</label>
+        <input type="email" id="correo" class="form-control" placeholder="Correo Electrónico" required autofocus>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-sm-6 col-md-5 col-lg-4">
+        <label for="inputPassword" class="sr-only">Contraseña</label>
+        <input type="password" id="pass" class="form-control" placeholder="Contraseña" required>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="row justify-content-center">
+      <label>
+        <a href="./registro">Regístrate aquí</a>
+      </label>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-sm-6 col-md-5 col-lg-4">
+        <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="login()">Iniciar Sesión</button>
+      </div>
+    </div>
+  </form>
+</div>
 <script text="text/javascript" src="js/login_functions.js"></script>
