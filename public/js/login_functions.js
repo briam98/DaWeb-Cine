@@ -20,10 +20,7 @@ function login() {
 function procesaRespuesta() {
     if (peticion_http.readyState == 4) {
         if (peticion_http.status == 200) {
-            alert("peticion correcta");
-            // Simulate an HTTP redirect:
             window.location.replace("http://localhost:3000");
-            //document.getElementById("respuesta").insertAdjacentHTML("beforeend", peticion_http.responseText);
         } else {
             if (peticion_http.status == 401) {
                 alert("Correo o contraseña incorrecto")

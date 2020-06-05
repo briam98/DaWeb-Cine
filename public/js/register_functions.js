@@ -60,8 +60,6 @@ function register() {
 function procesaRespuesta() {
     if (peticion_http.readyState == 4) {
         if (peticion_http.status == 200) {
-            alert("peticion correcta");
-            // Simulate an HTTP redirect:
             window.location.replace("http://localhost:3000/login");
         } else {
             alert("Fallo al intentar registrarse. Por favor intentalo de nuevo.")
