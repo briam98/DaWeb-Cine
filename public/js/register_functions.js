@@ -16,12 +16,12 @@ function validate() {
     }
 
     var pass1 = document.getElementById("pass1");
-    if (!pass1) {
+    if (!pass1.value) {
         return false;
     }
 
     var pass2 = document.getElementById("pass2");
-    if (!pass2) {
+    if (!pass2.value) {
         return false;
     }
 

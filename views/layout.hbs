@@ -15,8 +15,8 @@
 </head>
 
 <body>
-
-	<header>
+	<div class="grid_container">
+	<header class="itemA">
 		<a href="/">
 			<h1>DaWebCine</h1>
 		</a>
@@ -27,13 +27,16 @@
 			<a id="linkCerrarSesion" href="/" onclick="cerrarSesion()">Cerrar sesión</a>
 		</div>
 	</header>
-	{{{body}}}
-	<footer class="link">
+	<div class="itemB">
+		{{{body}}}
+	</div>
+	<footer class="link itemC">
 		<div>
 			<a href="#">Copyright</a>
 			<a href="#">Mapa del sitio</a>
 		</div>
 	</footer>
+	</div>
 
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
 	integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"

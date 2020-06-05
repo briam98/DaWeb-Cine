@@ -197,3 +197,13 @@ footer div {
 #linkCerrarSesion {
 	display: none;
 }
+
+.itemA {
+	grid-area: 1 / 1 / 2 / 3;
+  }
+.itemB {
+	grid-area: 2 / 1 / 3 / 3;
+}
+.itemC {
+	grid-area: 3 / 2 / 4 / 3;
+}
