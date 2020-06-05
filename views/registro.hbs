@@ -1,39 +1,41 @@
 <div id="contenido">
 	<article class="card-body mx-auto" style="max-width: 400px;">
 		<h4 class="card-title mt-3 text-center">Crea tu cuenta</h4>
+		<form>
 			<div class="form-group input-group">
 				<div class="input-group-prepend">
 					<span class="input-group-text"> <i class="fa fa-user"></i> </span>
 				</div>
-				<input id="nombre" name="nombre" class="form-control" placeholder="Nombre" required type="text">
+				<input id="nombre" name="nombre" class="form-control" placeholder="Nombre" type="text" required />
 			</div>
 			<div class="form-group input-group">
 				<div class="input-group-prepend">
 					<span class="input-group-text"> <i class="fa fa-user"></i> </span>
 				</div>
-				<input id="apellidos" name="Apellidos" class="form-control" placeholder="Apellidos" required type="text">
+				<input id="apellidos" name="Apellidos" class="form-control" placeholder="Apellidos" required type="text" />
 			</div>
 			<div class="form-group input-group">
 				<div class="input-group-prepend">
 					<span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
 				</div>
-				<input id="correo" name="correo" class="form-control" placeholder="Correo electrónico" required type="email">
+				<input id="correo" name="correo" class="form-control" placeholder="Correo electrónico" required type="email" />
 			</div>
 			<div class="form-group input-group">
 				<div class="input-group-prepend">
 					<span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 				</div>
-				<input  id="pass1" class="form-control" placeholder="Contraseña" required type="password">
+				<input  id="pass1" class="form-control" placeholder="Contraseña" required type="password" />
 			</div>
 			<div class="form-group input-group">
 				<div class="input-group-prepend">
 					<span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 				</div>
-				<input id="pass2" class="form-control" placeholder="Repite tu contraseña" required type="password">
+				<input id="pass2" class="form-control" placeholder="Repite tu contraseña" required type="password" />
 			</div>
 			<div class="form-group">
 				<button type="submit" onclick="validate()" class="btn btn-primary btn-block"> Regístrate </button>
 			</div>
+			</form>
 			<p class="text-center">¿Ya tienes cuenta? <a href="./login">Iniciar Sesión</a> </p>
 	</article>
 </div>

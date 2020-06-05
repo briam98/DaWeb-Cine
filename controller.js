@@ -51,26 +51,30 @@ class controller {
   }
 
   register(req, res) {
-    return new Promise(function (resolve, reject) {
     var nombre = req.body.nombre;
     var apellidos = req.body.apellidos;
     var correo = req.body.correo;
     var pass = req.body.pass1;
 
-    var userQuery = "INSERT INTO `cine`.`usuario` (`nombre`, `apellidos`, `correo`, `pass`) VALUES (" + nombre + ", " + apellidos + ", " + correo + ", " + pass + ");";
+    var userQuery = "INSERT INTO Cine.usuario (nombre, apellidos, correo, pass, puntos) VALUES ('" + nombre + "', '" + apellidos + "', '" + correo + "', '" + pass + "', 0);";
+    console.log(userQuery);
 
       bd_conection.query(userQuery, function (error, resultado) {
         if (error) {
-          reject("Error");
+          console.log(error);
+          res.writeHead(500);
+          res.end();
         } else {
+          console.log(resultado);
           if (resultado != "") {
-            resolve(resultado[0]);
+            res.writeHead(200);
+            res.end();
           } else {
-            reject(undefined);
+            res.writeHead(500);
+            res.end();
           }
         }
       });
-    });
   }
 
 }

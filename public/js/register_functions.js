@@ -1,15 +1,16 @@
 function validate() {
-    var nombre = document.getElementById("nombre");
+    
+    var nombre = document.getElementById("nombre").value;
     if (!nombre) {
         return false;
     }
 
-    var apellidos = document.getElementById("apellidos");
+    var apellidos = document.getElementById("apellidos").value;
     if (!apellidos) {
         return false;
     }
 
-    var correo = document.getElementById("correo");
+    var correo = document.getElementById("correo").value;
     if (!correo) {
         return false;
     }
@@ -63,11 +64,7 @@ function procesaRespuesta() {
             // Simulate an HTTP redirect:
             window.location.replace("http://localhost:3000/login");
         } else {
-            if (peticion_http.status == 401) {
-                alert("Correo o contraseña incorrecto")
-            } else {
-                alert("Error interno, intentelo de nuevo.")
-            }
+            alert("Fallo al intentar registrarse. Por favor intentalo de nuevo.")
         }
     }
 }
